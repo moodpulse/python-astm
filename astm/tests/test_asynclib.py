@@ -22,7 +22,8 @@ except ImportError:
     from unittest import skip
 
 
-HOST = test_support.HOST
+HOST = '127.0.0.1'
+
 
 class dummysocket:
     def __init__(self):

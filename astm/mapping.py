@@ -244,6 +244,8 @@ class IntegerField(Field):
             try:
                 value = self._get_value(value)
             except Exception:
+                if hasattr(value, 'value'):
+                    return self._set_value(value.value)
                 raise TypeError('Integer value expected, got %r' % value)
         return super(IntegerField, self)._set_value(value)
 
